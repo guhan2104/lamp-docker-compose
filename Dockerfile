@@ -1,0 +1,6 @@
+FROM dhanrajranvirkar/lamp-fe:0.1
+ENV MYSQL_ROOT_PASSWORD=redhat
+ENV MYSQL_DATABASE=lamp
+ENV MYSQL_USER=dhanraj
+ENV MYSQL_PASSWORD=spiderman007
+EXPOSE 80

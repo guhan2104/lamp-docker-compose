@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "9989:80"
+    volumes:
+      - mycode:/var/www/your_domain
+    links:
+      - db
+    command: bash -c "service apache2 start && sleep 1024d"
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=lamp
+      - MYSQL_USER=dhanraj
+      - MYSQL_PASSWORD=spiderman007
+    ports:
+      - "3306:3306"
+    volumes:
+      - mydb:/var/lib/mysql
+volumes:
+  mycode:
+    external: false
+  mydb:
+    external: false
+
+    
